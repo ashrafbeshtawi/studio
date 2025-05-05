@@ -4,8 +4,8 @@ import { Mail, Linkedin } from "lucide-react";
 import Link from 'next/link';
 
 export const ContactSection: React.FC = () => {
-  const email = "ashraf.beshtawi@example.com"; // Replace with actual email
-  const linkedinUrl = "https://www.linkedin.com/in/ashraf-beshtawi/"; // Replace with actual LinkedIn URL
+  const email = "beshtawi.ashraf@gmail.com"; // Updated email
+  const linkedinUrl = "https://www.linkedin.com/in/ashraf-beshtawi-1308a11a8/"; // Updated LinkedIn URL
 
   return (
     <section id="contact" className="section-padding"> {/* Removed bg-secondary */}
