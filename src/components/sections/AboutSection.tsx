@@ -4,14 +4,14 @@ import { User } from "lucide-react";
 
 export const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="section-padding bg-secondary">
+    <section id="about" className="section-padding"> {/* Removed bg-secondary */}
       <div className="container mx-auto">
         <Card className="max-w-4xl mx-auto shadow-md">
            <CardHeader className="flex flex-row items-center gap-3">
              <User className="w-6 h-6 text-accent" />
-             <CardTitle className="text-2xl">About Me</CardTitle>
+             <CardTitle className="text-3xl">About Me</CardTitle> {/* Increased size */}
            </CardHeader>
-           <CardContent className="text-lg text-muted-foreground space-y-4">
+           <CardContent className="text-xl text-muted-foreground space-y-4"> {/* Increased size */}
              <p>
                I am a passionate backend developer with a strong interest in AI and Crypto.
              </p>

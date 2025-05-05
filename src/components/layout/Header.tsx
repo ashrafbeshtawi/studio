@@ -38,7 +38,7 @@ export const Header: React.FC = () => {
 
 
   return (
-    <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled ? 'bg-background/95 backdrop-blur-sm shadow-md' : 'bg-secondary'}`}>
+    <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled ? 'bg-background/90 backdrop-blur-sm shadow-md border-b border-border' : 'bg-transparent'}`}>
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="#home" className="flex items-center gap-2 font-semibold text-lg text-primary hover:text-accent transition-colors">
           <Code className="h-6 w-6 text-accent" />
@@ -51,7 +51,7 @@ export const Header: React.FC = () => {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium text-foreground hover:text-accent transition-colors"
+              className="text-base font-medium text-foreground hover:text-accent transition-colors" /* Increased size */
               onClick={(e) => {
                  e.preventDefault();
                  const targetElement = document.querySelector(item.href);
@@ -74,13 +74,13 @@ export const Header: React.FC = () => {
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right">
+            <SheetContent side="right" className="bg-background"> {/* Ensure sheet content has background */}
               <nav className="grid gap-6 text-lg font-medium mt-8">
                 {navItems.map((item) => (
                    <SheetTrigger key={item.name} asChild>
                       <Link
                          href={item.href}
-                         className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
+                         className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground text-xl" /* Increased size */
                          onClick={(e) => {
                             e.preventDefault();
                             const targetElement = document.querySelector(item.href);

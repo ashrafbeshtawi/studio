@@ -24,9 +24,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark"> {/* Apply dark class */}
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-secondary`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`} // Remove bg-secondary, body background handled in globals.css
       >
         {children}
         <Toaster />

@@ -30,23 +30,23 @@ const projects: Project[] = [
 
 export const ProjectsSection: React.FC = () => {
   return (
-    <section id="projects" className="section-padding bg-background">
+    <section id="projects" className="section-padding"> {/* Removed bg-background */}
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12 text-primary">
+        <h2 className="text-4xl font-bold text-center mb-12 text-primary"> {/* Increased size */}
           Projects & Side Quests 🧠⛓️
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <Card key={project.title} className="flex flex-col hover:shadow-lg transition-shadow duration-300">
               <CardHeader>
-                <CardTitle className="text-xl">{project.title}</CardTitle>
+                <CardTitle className="text-2xl">{project.title}</CardTitle> {/* Increased size */}
               </CardHeader>
               <CardContent className="flex-grow">
-                <CardDescription className="text-base">{project.description}</CardDescription>
+                <CardDescription className="text-lg">{project.description}</CardDescription> {/* Increased size */}
               </CardContent>
               {project.link && (
                  <CardContent className="mt-auto pt-0">
-                    <Button variant="outline" asChild className="group w-full sm:w-auto transition-colors duration-200 hover:bg-accent hover:text-accent-foreground">
+                    <Button variant="outline" asChild className="group w-full sm:w-auto transition-colors duration-200 hover:bg-accent hover:text-accent-foreground text-base"> {/* Increased size */}
                        <Link href={project.link} target="_blank" rel="noopener noreferrer">
                          View Project
                          <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />

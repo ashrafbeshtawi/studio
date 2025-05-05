@@ -38,7 +38,7 @@ const SkillCard: React.FC<{ title: string; icon: React.ElementType; skills: Skil
      </CardHeader>
     <CardContent className="flex flex-wrap gap-2">
       {skills.map((skill) => (
-        <Badge key={skill.name} variant="secondary" className="flex items-center gap-1 px-3 py-1 text-sm transition-colors duration-200 hover:bg-accent hover:text-accent-foreground">
+        <Badge key={skill.name} variant="secondary" className="flex items-center gap-1 px-3 py-1 text-base transition-colors duration-200 hover:bg-accent hover:text-accent-foreground"> {/* Increased size */}
           <skill.icon className="w-4 h-4" />
           {skill.name}
         </Badge>
@@ -50,9 +50,9 @@ const SkillCard: React.FC<{ title: string; icon: React.ElementType; skills: Skil
 
 export const SkillsSection: React.FC = () => {
   return (
-    <section id="skills" className="section-padding bg-background">
+    <section id="skills" className="section-padding"> {/* Removed bg-background */}
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12 text-primary">
+        <h2 className="text-4xl font-bold text-center mb-12 text-primary"> {/* Increased size */}
           My Tech Stack & Superpowers 🚀
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
