@@ -19,12 +19,12 @@ export const ContactSection: React.FC = () => {
         </p>
         <div className="flex justify-center gap-4">
           <Button asChild variant="default" size="lg" className="transition-transform hover:scale-105 text-base">
-            <a href={`mailto:${email}`}>
+            <a href={`mailto:${email}`} className="flex items-center">
               <Mail className="mr-2 h-5 w-5" /> Email Me
             </a>
           </Button>
           <Button asChild variant="outline" size="lg" className="transition-transform hover:scale-105 hover:bg-accent hover:text-accent-foreground text-base">
-            <Link href={linkedinUrl} target="_blank" rel="noopener noreferrer">
+            <Link href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="flex items-center">
               <Linkedin className="mr-2 h-5 w-5" /> LinkedIn
             </Link>
           </Button>
