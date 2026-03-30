@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Berlin Bytes | Ashraf Beshtawi Portfolio",
-  description: "Personal portfolio of Ashraf Beshtawi, a backend developer based in Berlin, specializing in PHP, Symfony, AI, and Crypto.",
+  title: "Ashraf Beshtawi | Software Developer",
+  description: "Portfolio of Ashraf Beshtawi — software developer based in Berlin, specializing in backend systems, AI, and web3.",
 };
 
 export default function RootLayout({
@@ -16,12 +16,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body
-        className={`${inter.className} antialiased`}
-      >
-        {children}
-        <Toaster />
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <body className={`${inter.className} antialiased`}>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
