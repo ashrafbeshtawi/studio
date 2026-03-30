@@ -1,6 +1,8 @@
+"use client";
+
 import type React from "react";
 import { Badge } from "@/components/ui/badge";
-import { BrainCircuit, Languages, Briefcase, Globe, Award, ExternalLink } from "lucide-react";
+import { Briefcase, Award, ExternalLink } from "lucide-react";
 import * as Icons from "@/components/icons";
 import Link from "next/link";
 
@@ -14,25 +16,18 @@ interface Certification {
   url: string;
 }
 
-const techSkills: Skill[] = [
+const toolkitSkills: Skill[] = [
   { name: "PHP", icon: Icons.PhpIcon },
   { name: "Symfony", icon: Icons.SymfonyIcon },
   { name: "PostgreSQL", icon: Icons.PostgresqlIcon },
-  { name: "RESTful API", icon: Icons.RestApiIcon },
   { name: "Docker", icon: Icons.DockerIcon },
-  { name: "JSON Schema", icon: Icons.JsonSchemaIcon },
-];
-
-const explorationSkills: Skill[] = [
-  { name: "Python", icon: Icons.PythonIcon },
-  { name: "Solidity", icon: Icons.SolidityIcon },
+  { name: "n8n", icon: Icons.N8nIcon },
+  { name: "Git", icon: Icons.GitIcon },
+  { name: "RESTful API", icon: Icons.RestApiIcon },
+  { name: "Agentic AI", icon: Icons.AgenticAiIcon },
+  { name: "Postman", icon: Icons.PostmanIcon },
   { name: "Next.js", icon: Icons.NextjsIcon },
-];
-
-const languages: Skill[] = [
-  { name: "German", icon: Languages },
-  { name: "English", icon: Languages },
-  { name: "Arabic", icon: Languages },
+  { name: "Three.js", icon: Icons.ThreejsIcon },
 ];
 
 const certifications: Certification[] = [
@@ -41,34 +36,19 @@ const certifications: Certification[] = [
   { name: "Claude Code", url: "https://verify.skilljar.com/c/da6mfrh4vqiz" },
 ];
 
-interface SkillGroupProps {
-  title: string;
-  icon: React.ElementType;
-  skills: Skill[];
-}
-
-const SkillGroup: React.FC<SkillGroupProps> = ({ title, icon: TitleIcon, skills }) => (
-  <div className="glass rounded-2xl p-6 hover:shadow-xl hover:shadow-accent/5 transition-all duration-500 group">
-    <div className="flex items-center gap-3 mb-5">
-      <div className="p-2.5 rounded-xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-300">
-        <TitleIcon className="w-5 h-5" />
-      </div>
-      <h3 className="text-lg font-semibold text-foreground">{title}</h3>
-    </div>
-    <div className="flex flex-wrap gap-2">
-      {skills.map((skill) => (
-        <Badge
-          key={skill.name}
-          variant="secondary"
-          className="flex items-center gap-1.5 px-3 py-1.5 text-sm bg-secondary/80 hover:bg-accent hover:text-accent-foreground transition-all duration-200 cursor-default"
-        >
-          <skill.icon className="w-3.5 h-3.5" />
-          {skill.name}
-        </Badge>
-      ))}
-    </div>
-  </div>
-);
+const SkillBubble: React.FC<{ skill: Skill; index: number }> = ({ skill, index }) => {
+  const Icon = skill.icon;
+  return (
+    <Badge
+      variant="secondary"
+      className="flex items-center gap-2 px-4 py-2.5 text-sm rounded-full bg-secondary/80 hover:bg-accent hover:text-accent-foreground hover:scale-110 hover:shadow-lg hover:shadow-accent/20 transition-all duration-300 cursor-default animate-fade-in-up"
+      style={{ animationDelay: `${index * 0.05}s` }}
+    >
+      <Icon className="w-4 h-4" />
+      {skill.name}
+    </Badge>
+  );
+};
 
 export const SkillsSection: React.FC = () => {
   return (
@@ -83,11 +63,19 @@ export const SkillsSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Skills grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-          <SkillGroup title="Backend Toolkit" icon={Briefcase} skills={techSkills} />
-          <SkillGroup title="Exploration" icon={BrainCircuit} skills={explorationSkills} />
-          <SkillGroup title="Languages" icon={Globe} skills={languages} />
+        {/* Toolkit */}
+        <div className="glass rounded-2xl p-8 mb-10 hover:shadow-xl hover:shadow-accent/5 transition-all duration-500 group">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-2.5 rounded-xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-300">
+              <Briefcase className="w-5 h-5" />
+            </div>
+            <h3 className="text-lg font-semibold text-foreground">Toolkit</h3>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            {toolkitSkills.map((skill, index) => (
+              <SkillBubble key={skill.name} skill={skill} index={index} />
+            ))}
+          </div>
         </div>
 
         {/* Certifications row */}

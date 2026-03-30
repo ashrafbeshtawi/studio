@@ -1,5 +1,5 @@
 import type React from "react";
-import { MapPin, Coffee, Zap } from "lucide-react";
+import { MapPin, Coffee, Zap, Globe } from "lucide-react";
 
 export const AboutSection: React.FC = () => {
   return (
@@ -22,7 +22,7 @@ export const AboutSection: React.FC = () => {
             which allows me to collaborate across diverse teams and environments.
           </p>
 
-          <div className="grid sm:grid-cols-3 gap-4 pt-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
             <div className="flex items-center gap-3 text-muted-foreground">
               <div className="p-2 rounded-lg bg-accent/10 text-accent">
                 <MapPin className="w-4 h-4" />
@@ -40,6 +40,12 @@ export const AboutSection: React.FC = () => {
                 <Zap className="w-4 h-4" />
               </div>
               <span className="text-sm">Always learning</span>
+            </div>
+            <div className="flex items-center gap-3 text-muted-foreground">
+              <div className="p-2 rounded-lg bg-accent/10 text-accent">
+                <Globe className="w-4 h-4" />
+              </div>
+              <span className="text-sm">German, English, Arabic</span>
             </div>
           </div>
         </div>

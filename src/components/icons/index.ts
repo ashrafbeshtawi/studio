@@ -7,3 +7,8 @@ export { JsonSchemaIcon } from './JsonSchemaIcon';
 export { PythonIcon } from './PythonIcon';
 export { SolidityIcon } from './SolidityIcon';
 export { NextjsIcon } from './NextjsIcon';
+export { N8nIcon } from './N8nIcon';
+export { GitIcon } from './GitIcon';
+export { PostmanIcon } from './PostmanIcon';
+export { ThreejsIcon } from './ThreejsIcon';
+export { AgenticAiIcon } from './AgenticAiIcon';

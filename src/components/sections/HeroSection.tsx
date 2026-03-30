@@ -40,7 +40,7 @@ export const HeroSection: React.FC = () => {
           Passionate about clean architecture and innovative solutions.
         </p>
 
-        <div className="flex gap-3 mb-12 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+        <div className="flex flex-wrap justify-center gap-3 mb-12 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
           <Button asChild variant="default" size="lg" className="rounded-full bg-accent hover:bg-accent/90 text-accent-foreground">
             <a href="mailto:beshtawi.ashraf@gmail.com">
               <Mail className="mr-2 h-4 w-4" /> Get in Touch

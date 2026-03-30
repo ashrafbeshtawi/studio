@@ -13,9 +13,9 @@ export default function Home() {
       <main className="flex-grow">
         <HeroSection />
         <SkillsSection />
-        <AboutSection />
         <ProjectsSection />
         <ContactSection />
+        <AboutSection />
       </main>
       <Footer />
     </div>
